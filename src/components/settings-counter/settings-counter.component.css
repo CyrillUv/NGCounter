@@ -1,0 +1,29 @@
+.panel{
+  width: 500px;
+  height: 300px;
+  border: 5px solid #000;
+}
+.values{
+  display: flex;
+  margin-top:25% ;
+  justify-content: space-around;
+}
+.saving{
+  display: flex;
+  margin-top:5% ;
+  justify-content: center;
+}
+.saving button{
+  width: 50px;
+  height: 50px;
+  background: mediumpurple;
+  color:brown;
+  border: none;
+  border-radius:30px ;
+}
+.saving button:hover{
+  background-color: lightgreen;
+}
+.saving button:active{
+  background-color: gray;
+}
