@@ -1,11 +1,13 @@
 <div class="panel">
     <div class="values">
-      <input type="number" [value]=minValueSetting>
+      <input type="number" [(ngModel)]="minValue" [disabled]="disableSetting" [min]="minValueSetting"
+             [max]="maxValueSetting-1&&maxValue-1">
       Min
-      <input type="number">
+      <input type="number" [(ngModel)]="maxValue" [disabled]="disableSetting" [min]="(minValueSetting + 1) && (minValue + 1)"
+             [max]="maxValueSetting">
       Max
     </div>
   <div class="saving">
-    <button class="Button" (click)="emitSave.emit({value:3142123})">Save</button>
+    <button class="Button" (click)="save()">Save</button>
   </div>
 </div>

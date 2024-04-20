@@ -1,12 +1,20 @@
 <div class="panel">
   <div class="counter">
     <div class="buffer">
-      <input type="number">
-      <button >reset</button>
+      <input type="number" [(ngModel)]="valueCounter"
+             [disabled]="!settings.disableSettings"
+             [min]="settings.minValue" [max]="settings.maxValue">
+
+      <button (click)="valueCounter = settings.minValue"
+              [disabled]="!settings.disableSettings" >reset</button>
     </div>
+
     <div class="actions">
-      <button >+</button>
-      <button >-</button>
+      <button [disabled]="disableIncrement"
+              (click)="valueCounter=valueCounter+1" >+</button>
+
+      <button [disabled]="disableDecrement"
+              (click)="valueCounter=valueCounter-1">-</button>
     </div>
   </div>
 </div>

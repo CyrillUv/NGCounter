@@ -1,5 +1,5 @@
 <div class="container-counter">
-  <app-settings-counter (emitSave)="save($event)"  [minValueSetting]="minValue"></app-settings-counter>
+  <app-settings-counter (emitSave)="save($event)" [maxValueSetting]="maxValue" [minValueSetting]="minValue"></app-settings-counter>
 
-<app-view-counter></app-view-counter>
+<app-view-counter [settings]="settings"></app-view-counter>
 </div>

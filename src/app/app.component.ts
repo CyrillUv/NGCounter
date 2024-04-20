@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ViewCounterComponent} from "../components/view-counter/view-counter.component";
 import {SettingsCounterComponent} from "../components/settings-counter/settings-counter.component";
+import {Settings} from "../components/types";
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,11 @@ import {SettingsCounterComponent} from "../components/settings-counter/settings-
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  public minValue = 3
-  public save(event:any){
-    console.log(event)
+  public minValue = 0
+  public maxValue = 10
+  public settings: Settings = {minValue:0,maxValue:0,disableSettings:false}
+
+  public save(event: Settings): void{
+    this.settings = event;
   }
-  title = 'NGCounter';
 }
