@@ -1,5 +1,4 @@
 <div class="container-counter">
-  <app-settings-counter (emitSave)="save($event)" [maxValueSetting]="maxValue" [minValueSetting]="minValue"></app-settings-counter>
-
-<app-view-counter [settings]="settings"></app-view-counter>
+  <app-settings-counter *ngIf="!settingsService.settings.disableSettings"></app-settings-counter>
+<app-view-counter *ngIf="settingsService.settings.disableSettings"></app-view-counter>
 </div>

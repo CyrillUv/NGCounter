@@ -1,20 +1,20 @@
 <div class="panel">
   <div class="counter">
     <div class="buffer">
-      <input type="number" [(ngModel)]="valueCounter"
-             [disabled]="!settings.disableSettings"
-             [min]="settings.minValue" [max]="settings.maxValue">
+      <p-inputNumber [(ngModel)]="valueCounter" [showButtons]="true"
+                     [disabled]="!settingsCounter.settings.disableSettings"
+                     [min]="settingsCounter.settings.minValue" [max]="settingsCounter.settings.maxValue"></p-inputNumber>
 
-      <button (click)="valueCounter = settings.minValue"
-              [disabled]="!settings.disableSettings" >reset</button>
+      <p-button label="reset"  icon="pi pi-times" (click)="valueCounter = 0"
+              [disabled]="!settingsCounter.settings.disableSettings" ></p-button>
     </div>
 
     <div class="actions">
-      <button [disabled]="disableIncrement"
-              (click)="valueCounter=valueCounter+1" >+</button>
+      <p-button  icon="pi pi-plus" [disabled]="disableIncrement"
+              (click)="valueCounter=valueCounter+1" ></p-button>
 
-      <button [disabled]="disableDecrement"
-              (click)="valueCounter=valueCounter-1">-</button>
+      <p-button  icon="pi pi-minus"[disabled]="disableDecrement"
+              (click)="valueCounter=valueCounter-1"></p-button>
     </div>
   </div>
 </div>

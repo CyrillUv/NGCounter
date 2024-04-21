@@ -1,13 +1,18 @@
 <div class="panel">
     <div class="values">
-      <input type="number" [(ngModel)]="minValue" [disabled]="disableSetting" [min]="minValueSetting"
-             [max]="maxValueSetting-1&&maxValue-1">
+      <p-inputNumber [size]="10" [(ngModel)]="minValue" [disabled]="disableSetting" [min]="settingsService.minValue"
+                     [max]="settingsService.maxValue-1&&maxValue-1" [showButtons]="true"></p-inputNumber>
       Min
-      <input type="number" [(ngModel)]="maxValue" [disabled]="disableSetting" [min]="(minValueSetting + 1) && (minValue + 1)"
-             [max]="maxValueSetting">
+
+      <p-inputNumber [size]="10" [(ngModel)]="maxValue" [disabled]="disableSetting" [min]="(settingsService.minValue + 1) && (minValue + 1)"
+                     [max]="settingsService.maxValue" [showButtons]="true" > </p-inputNumber>
+
       Max
+
     </div>
   <div class="saving">
-    <button class="Button" (click)="save()">Save</button>
+    <p-button label="save" [disabled]="disableSetting"  icon="pi pi-save"  (click)="save()"></p-button>
   </div>
+
+
 </div>
